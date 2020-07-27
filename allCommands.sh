@@ -15,7 +15,27 @@ tree > home_utf8.tree
 
 tree | sed 's/+/\+/g; s/-/-/g; s/+/\\/g'
 
-
+# download website using wget
+# https://www.linuxjournal.com/content/downloading-entire-web-site-wget
+wget \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --domains website.org \
+     --no-parent \
+         www.website.org/tutorials/html/
+wget \
+     --recursive \
+     --no-clobber \
+     --page-requisites \
+     --html-extension \
+     --convert-links \
+     --restrict-file-names=windows \
+     --domains website.org \
+     --no-parent \
+         www.website.org/tutorials/html/
 
 
 # recover files
