@@ -18,6 +18,8 @@ tree | sed 's/+/\+/g; s/-/-/g; s/+/\\/g'
 # copy a list of files
 for f in `cat listoffiles.txt`; do mv "$f" /path_to_destination_directory/ ; done
 
+rsync -a /source/directory --files-from=/full/path/to/listfile /destination/directory
+
 
 # get details of image files from terminal
 find ./ -name "*.png" -exec file {} +|awk -F "," '{print $1 $2}'
